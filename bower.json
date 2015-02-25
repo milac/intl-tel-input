@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "jasmine-jquery": "~2.0.2",
-    "flag-icon-css": "~0.6.4"
+    "flag-icon": "*"
   }
 }
