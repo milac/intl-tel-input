@@ -1,11 +1,12 @@
 /**
  * Custom download from https://github.com/lipis/flag-icon-css
  */
-@import "sprite";
+@import "sprites-smaller";
+@import "sprites";
 
 .iti-flag {
-  width: 18px;
-  height: 13px;
+  width: 16px;
+  height: 11px;
   box-shadow: 0px 0px 1px 0px #888;
   background-image: url("../img/flags.png");
   // empty state

@@ -1,0 +1,1319 @@
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function retina-size($value) {
+  @return strip-units($value)/2 + px;
+}
+
+@mixin retina-bg-size($spriteWidth, $spriteHeight) {
+  background-size: (strip-units($spriteWidth)/2) + px (strip-units($spriteHeight)/2) + px;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .iti-flag {
+    @include retina-bg-size(554px, 503px);
+
+    &.ab {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(0px);
+    }
+    &.ad {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-336px);
+    }
+    &.ae {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-28px);
+    }
+    &.af {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-28px);
+    }
+    &.ag {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(0px);
+    }
+    &.ai {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-28px);
+    }
+    &.al {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-56px);
+    }
+    &.am {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-56px);
+    }
+    &.ao {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-56px);
+    }
+    &.aq {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(0px);
+    }
+    &.ar {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-28px);
+    }
+    &.as {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-56px);
+    }
+    &.at {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-84px);
+    }
+    &.au {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-84px);
+    }
+    &.aw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-84px);
+    }
+    &.ax {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-84px);
+    }
+    &.az {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-112px);
+    }
+    &.ba {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-112px);
+    }
+    &.bb {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-112px);
+    }
+    &.bd {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-112px);
+    }
+    &.be {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(0px);
+    }
+    &.bf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-28px);
+    }
+    &.bg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-56px);
+    }
+    &.bh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-84px);
+    }
+    &.bi {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-112px);
+    }
+    &.bj {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-140px);
+    }
+    &.bl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-140px);
+    }
+    &.bm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-140px);
+    }
+    &.bn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-140px);
+    }
+    &.bo {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-140px);
+    }
+    &.bq {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(0px);
+    }
+    &.br {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-28px);
+    }
+    &.bs {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-56px);
+    }
+    &.bt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-84px);
+    }
+    &.bv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-112px);
+    }
+    &.bw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-140px);
+    }
+    &.by {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-168px);
+    }
+    &.bz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-168px);
+    }
+    &.ca {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-168px);
+    }
+    &.cc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-168px);
+    }
+    &.cd {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-168px);
+    }
+    &.cf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-168px);
+    }
+    &.cg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(0px);
+    }
+    &.ch {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-28px);
+    }
+    &.ci {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-56px);
+    }
+    &.ck {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-84px);
+    }
+    &.cl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-112px);
+    }
+    &.cm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-140px);
+    }
+    &.cn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-168px);
+    }
+    &.co {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-196px);
+    }
+    &.cr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-196px);
+    }
+    &.cu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-196px);
+    }
+    &.cv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-196px);
+    }
+    &.cw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-196px);
+    }
+    &.cx {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-196px);
+    }
+    &.cy {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-196px);
+    }
+    &.cz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-224px);
+    }
+    &.de {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-224px);
+    }
+    &.dj {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-224px);
+    }
+    &.dk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-224px);
+    }
+    &.dm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-224px);
+    }
+    &.do {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-224px);
+    }
+    &.dz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-224px);
+    }
+    &.ec {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(0px);
+    }
+    &.ee {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-28px);
+    }
+    &.eg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-56px);
+    }
+    &.eh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-84px);
+    }
+    &.england {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-112px);
+    }
+    &.er {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-140px);
+    }
+    &.es {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-168px);
+    }
+    &.et {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-196px);
+    }
+    &.europeanunion {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-224px);
+    }
+    &.fi {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-252px);
+    }
+    &.fj {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-252px);
+    }
+    &.fk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-252px);
+    }
+    &.fm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-252px);
+    }
+    &.fo {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-252px);
+    }
+    &.fr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-252px);
+    }
+    &.ga {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-252px);
+    }
+    &.gb {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-252px);
+    }
+    &.gd {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(0px);
+    }
+    &.ge {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-28px);
+    }
+    &.gf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-56px);
+    }
+    &.gg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-84px);
+    }
+    &.gh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-112px);
+    }
+    &.gi {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-140px);
+    }
+    &.gl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-168px);
+    }
+    &.gm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-196px);
+    }
+    &.gn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-224px);
+    }
+    &.gp {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-252px);
+    }
+    &.gq {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-280px);
+    }
+    &.gr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-280px);
+    }
+    &.gs {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-280px);
+    }
+    &.gt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-280px);
+    }
+    &.gu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-280px);
+    }
+    &.gw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-280px);
+    }
+    &.gy {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-280px);
+    }
+    &.hk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-280px);
+    }
+    &.hm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-280px);
+    }
+    &.hn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(0px);
+    }
+    &.hr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-28px);
+    }
+    &.ht {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-56px);
+    }
+    &.hu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-84px);
+    }
+    &.id {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-112px);
+    }
+    &.ie {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-140px);
+    }
+    &.il {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-168px);
+    }
+    &.im {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-196px);
+    }
+    &.in {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-224px);
+    }
+    &.io {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-252px);
+    }
+    &.iq {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-280px);
+    }
+    &.ir {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-308px);
+    }
+    &.is {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-308px);
+    }
+    &.it {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-308px);
+    }
+    &.je {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-308px);
+    }
+    &.jm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-308px);
+    }
+    &.jo {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-308px);
+    }
+    &.jp {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-308px);
+    }
+    &.ke {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-308px);
+    }
+    &.kg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-308px);
+    }
+    &.kh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-308px);
+    }
+    &.ki {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-336px);
+    }
+    &.km {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-336px);
+    }
+    &.kn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-336px);
+    }
+    &.kp {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-336px);
+    }
+    &.kr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-336px);
+    }
+    &.kw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-336px);
+    }
+    &.ky {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-336px);
+    }
+    &.kz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-336px);
+    }
+    &.la {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-336px);
+    }
+    &.lb {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(0px);
+    }
+    &.lc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(0px);
+    }
+    &.li {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-28px);
+    }
+    &.lk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-56px);
+    }
+    &.lr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-84px);
+    }
+    &.ls {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-112px);
+    }
+    &.lt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-140px);
+    }
+    &.lu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-168px);
+    }
+    &.lv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-196px);
+    }
+    &.ly {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-224px);
+    }
+    &.ma {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-252px);
+    }
+    &.mc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-280px);
+    }
+    &.md {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-308px);
+    }
+    &.me {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-336px);
+    }
+    &.mf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-364px);
+    }
+    &.mg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-364px);
+    }
+    &.mh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-364px);
+    }
+    &.mk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-364px);
+    }
+    &.ml {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-364px);
+    }
+    &.mm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-364px);
+    }
+    &.mn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-364px);
+    }
+    &.mo {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-364px);
+    }
+    &.mp {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-364px);
+    }
+    &.mq {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-364px);
+    }
+    &.mr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-364px);
+    }
+    &.ms {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(0px);
+    }
+    &.mt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-28px);
+    }
+    &.mu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-56px);
+    }
+    &.mv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-84px);
+    }
+    &.mw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-112px);
+    }
+    &.mx {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-140px);
+    }
+    &.my {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-168px);
+    }
+    &.mz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-196px);
+    }
+    &.na {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-224px);
+    }
+    &.nc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-252px);
+    }
+    &.ne {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-280px);
+    }
+    &.nf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-308px);
+    }
+    &.ng {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-336px);
+    }
+    &.ni {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-364px);
+    }
+    &.nl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-392px);
+    }
+    &.no {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-392px);
+    }
+    &.northerncyprus {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-392px);
+    }
+    &.np {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-392px);
+    }
+    &.nr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-392px);
+    }
+    &.nu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-392px);
+    }
+    &.nz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-392px);
+    }
+    &.om {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-392px);
+    }
+    &.pa {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-392px);
+    }
+    &.pe {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-392px);
+    }
+    &.pf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-392px);
+    }
+    &.pg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-392px);
+    }
+    &.ph {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(0px);
+    }
+    &.pk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-28px);
+    }
+    &.pl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-56px);
+    }
+    &.pm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-84px);
+    }
+    &.pn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-112px);
+    }
+    &.pr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-140px);
+    }
+    &.ps {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-168px);
+    }
+    &.pt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-196px);
+    }
+    &.pw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-224px);
+    }
+    &.py {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-252px);
+    }
+    &.qa {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-280px);
+    }
+    &.re {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-308px);
+    }
+    &.ro {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-336px);
+    }
+    &.rs {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-364px);
+    }
+    &.ru {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-392px);
+    }
+    &.rw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-420px);
+    }
+    &.sa {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-420px);
+    }
+    &.sb {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-420px);
+    }
+    &.sc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-420px);
+    }
+    &.scotland {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-420px);
+    }
+    &.sd {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-420px);
+    }
+    &.se {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-420px);
+    }
+    &.sg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-420px);
+    }
+    &.sh {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-420px);
+    }
+    &.si {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-420px);
+    }
+    &.sj {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-420px);
+    }
+    &.sk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-420px);
+    }
+    &.sl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-420px);
+    }
+    &.sm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-448px);
+    }
+    &.sn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-448px);
+    }
+    &.so {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-448px);
+    }
+    &.southossetia {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-448px);
+    }
+    &.sr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-448px);
+    }
+    &.ss {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-448px);
+    }
+    &.st {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-448px);
+    }
+    &.sv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-448px);
+    }
+    &.sx {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-448px);
+    }
+    &.sy {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-448px);
+    }
+    &.sz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-448px);
+    }
+    &.tc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-448px);
+    }
+    &.td {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-448px);
+    }
+    &.tf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(0px);
+    }
+    &.tg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-28px);
+    }
+    &.th {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-56px);
+    }
+    &.tj {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-84px);
+    }
+    &.tk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-112px);
+    }
+    &.tl {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-140px);
+    }
+    &.tm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-168px);
+    }
+    &.tn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-196px);
+    }
+    &.to {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-224px);
+    }
+    &.tr {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-252px);
+    }
+    &.tt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-280px);
+    }
+    &.tv {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-308px);
+    }
+    &.tw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-336px);
+    }
+    &.tz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-364px);
+    }
+    &.ua {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-392px);
+    }
+    &.ug {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-420px);
+    }
+    &.um {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-448px);
+    }
+    &.unitednations {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(0px) retina-size(-476px);
+    }
+    &.us {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-37px) retina-size(-476px);
+    }
+    &.uy {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-74px) retina-size(-476px);
+    }
+    &.uz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-111px) retina-size(-476px);
+    }
+    &.va {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-148px) retina-size(-476px);
+    }
+    &.vc {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-185px) retina-size(-476px);
+    }
+    &.ve {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-222px) retina-size(-476px);
+    }
+    &.vg {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-259px) retina-size(-476px);
+    }
+    &.vi {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-296px) retina-size(-476px);
+    }
+    &.vn {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-333px) retina-size(-476px);
+    }
+    &.vu {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-370px) retina-size(-476px);
+    }
+    &.wales {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-407px) retina-size(-476px);
+    }
+    &.wf {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-444px) retina-size(-476px);
+    }
+    &.ws {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-481px) retina-size(-476px);
+    }
+    &.xk {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(0px);
+    }
+    &.ye {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-28px);
+    }
+    &.yt {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-56px);
+    }
+    &.za {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-84px);
+    }
+    &.zm {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-112px);
+    }
+    &.zw {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-140px);
+    }
+    &.zz {
+      width: retina-size(36px);
+      height: retina-size(27px);
+      background-position: retina-size(-518px) retina-size(-168px);
+    }
+  }
+}
