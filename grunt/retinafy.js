@@ -4,17 +4,14 @@ module.exports = function(grunt) {
       sizes: {
         '50%': {
           suffix: ''
-        },
-        '100%': {
-          suffix: '@2x'
         }
       }
     },
     files: {
       expand: true,
-      cwd: 'src/img/',
-      src: ['flags.png'],
-      dest: 'build/img'
+      cwd: 'src/img/flags/@2x/',
+      src: ['*.png'],
+      dest: 'src/img/flags/'
     }
   };
 };

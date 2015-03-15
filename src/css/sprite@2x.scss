@@ -1,0 +1,1068 @@
+@function retina-size($value, $type: 'floor') {
+  @if ($type == 'floor') {
+    @return floor($value / 2);
+  } @else if ($type == 'round') {
+    @return round($value / 2);
+  } @else if ($type == 'ceil') {
+    @return ceil($value / 2);
+  } @else {
+    @return floor($value / 2);
+  }
+}
+
+@mixin retina-bg-size($spriteWidth, $spriteHeight) {
+  background-size: round($spriteWidth / 2) auto;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .iti-flag {
+    $item-width-maps: (ac: 40px, ad: 40px, ae: 40px, af: 40px, ag: 40px, ai: 40px, al: 40px, am: 40px, ao: 40px, aq: 40px, ar: 40px, as: 40px, at: 40px, au: 40px, aw: 40px, ax: 40px, az: 40px, ba: 40px, bb: 40px, bd: 40px, be: 35px, bf: 40px, bg: 40px, bh: 40px, bi: 40px, bj: 40px, bl: 40px, bm: 40px, bn: 40px, bo: 40px, bq: 40px, br: 40px, bs: 40px, bt: 40px, bv: 40px, bw: 40px, by: 40px, bz: 40px, ca: 40px, cc: 40px, cd: 40px, cf: 40px, cg: 40px, ch: 30px, ci: 40px, ck: 40px, cl: 40px, cm: 40px, cn: 40px, co: 40px, cp: 40px, cr: 40px, cu: 40px, cv: 40px, cw: 40px, cx: 40px, cy: 40px, cz: 40px, de: 40px, dg: 40px, dj: 40px, dk: 40px, dm: 40px, do: 40px, dz: 40px, ea: 40px, ec: 40px, ee: 40px, eg: 40px, eh: 40px, er: 40px, es: 40px, et: 40px, eu: 40px, fi: 40px, fj: 40px, fk: 40px, fm: 40px, fo: 40px, fr: 40px, ga: 40px, gb: 40px, gd: 40px, ge: 40px, gf: 40px, gg: 40px, gh: 40px, gi: 40px, gl: 40px, gm: 40px, gn: 40px, gp: 40px, gq: 40px, gr: 40px, gs: 40px, gt: 40px, gu: 40px, gw: 40px, gy: 40px, hk: 40px, hm: 40px, hn: 40px, hr: 40px, ht: 40px, hu: 40px, ic: 40px, id: 40px, ie: 40px, il: 40px, im: 40px, in: 40px, io: 40px, iq: 40px, ir: 40px, is: 40px, it: 40px, je: 40px, jm: 40px, jo: 40px, jp: 40px, ke: 40px, kg: 40px, kh: 40px, ki: 40px, km: 40px, kn: 40px, kp: 40px, kr: 40px, kw: 40px, ky: 40px, kz: 40px, la: 40px, lb: 40px, lc: 40px, li: 40px, lk: 40px, lr: 40px, ls: 40px, lt: 40px, lu: 40px, lv: 40px, ly: 40px, ma: 40px, mc: 38px, md: 40px, me: 40px, mf: 40px, mg: 40px, mh: 40px, mk: 40px, ml: 40px, mm: 40px, mn: 40px, mo: 40px, mp: 40px, mq: 40px, mr: 40px, ms: 40px, mt: 40px, mu: 40px, mv: 40px, mw: 40px, mx: 40px, my: 40px, mz: 40px, na: 40px, nc: 40px, ne: 35px, nf: 40px, ng: 40px, ni: 40px, nl: 40px, no: 40px, np: 25px, nr: 40px, nu: 40px, nz: 40px, om: 40px, pa: 40px, pe: 40px, pf: 40px, pg: 40px, ph: 40px, pk: 40px, pl: 40px, pm: 40px, pn: 40px, pr: 40px, ps: 40px, pt: 40px, pw: 40px, py: 40px, qa: 40px, re: 40px, ro: 40px, rs: 40px, ru: 40px, rw: 40px, sa: 40px, sb: 40px, sc: 40px, sd: 40px, se: 40px, sg: 40px, sh: 40px, si: 40px, sj: 40px, sk: 40px, sl: 40px, sm: 40px, sn: 40px, so: 40px, sr: 40px, ss: 40px, st: 40px, sv: 40px, sx: 40px, sy: 40px, sz: 40px, ta: 40px, tc: 40px, td: 40px, tf: 40px, tg: 40px, th: 40px, tj: 40px, tk: 40px, tl: 40px, tm: 40px, tn: 40px, to: 40px, tr: 40px, tt: 40px, tv: 40px, tw: 40px, tz: 40px, ua: 40px, ug: 40px, um: 40px, us: 40px, uy: 40px, uz: 40px, va: 30px, vc: 40px, ve: 40px, vg: 40px, vi: 40px, vn: 40px, vu: 40px, wf: 40px, ws: 40px, xk: 40px, ye: 40px, yt: 40px, za: 40px, zm: 40px, zw: 40px, );
+    $standard-country: 'ac';
+    width: retina-size(map-get($item-width-maps, $standard-country));
+
+    @each $key, $width in $item-width-maps {
+      @if $width != map-get($item-width-maps, $standard-country) {
+        &.#{$key} {
+          width: retina-size($width, 'floor');
+        }
+      }
+    }
+
+    @include retina-bg-size(11257px, 30px);
+
+    &.ac {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(0px, 'round') retina-size(0px, 'round');
+    }
+    &.ad {
+      height: retina-size(28px, 'floor');
+      background-position: retina-size(-44px, 'round') retina-size(0px, 'round');
+    }
+    &.ae {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-88px, 'round') retina-size(0px, 'round');
+    }
+    &.af {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-132px, 'round') retina-size(0px, 'round');
+    }
+    &.ag {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-176px, 'round') retina-size(0px, 'round');
+    }
+    &.ai {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-220px, 'round') retina-size(0px, 'round');
+    }
+    &.al {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-264px, 'round') retina-size(0px, 'round');
+    }
+    &.am {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-308px, 'round') retina-size(0px, 'round');
+    }
+    &.ao {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-352px, 'round') retina-size(0px, 'round');
+    }
+    &.aq {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-396px, 'round') retina-size(0px, 'round');
+    }
+    &.ar {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-440px, 'round') retina-size(0px, 'round');
+    }
+    &.as {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-484px, 'round') retina-size(0px, 'round');
+    }
+    &.at {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-528px, 'round') retina-size(0px, 'round');
+    }
+    &.au {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-572px, 'round') retina-size(0px, 'round');
+    }
+    &.aw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-616px, 'round') retina-size(0px, 'round');
+    }
+    &.ax {
+      height: retina-size(26px, 'floor');
+      background-position: retina-size(-660px, 'round') retina-size(0px, 'round');
+    }
+    &.az {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-704px, 'round') retina-size(0px, 'round');
+    }
+    &.ba {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-748px, 'round') retina-size(0px, 'round');
+    }
+    &.bb {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-792px, 'round') retina-size(0px, 'round');
+    }
+    &.bd {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-836px, 'round') retina-size(0px, 'round');
+    }
+    &.be {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-880px, 'round') retina-size(0px, 'round');
+    }
+    &.bf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-919px, 'round') retina-size(0px, 'round');
+    }
+    &.bg {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-963px, 'round') retina-size(0px, 'round');
+    }
+    &.bh {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-1007px, 'round') retina-size(0px, 'round');
+    }
+    &.bi {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-1051px, 'round') retina-size(0px, 'round');
+    }
+    &.bj {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1095px, 'round') retina-size(0px, 'round');
+    }
+    &.bl {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1139px, 'round') retina-size(0px, 'round');
+    }
+    &.bm {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1183px, 'round') retina-size(0px, 'round');
+    }
+    &.bn {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1227px, 'round') retina-size(0px, 'round');
+    }
+    &.bo {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1271px, 'round') retina-size(0px, 'round');
+    }
+    &.bq {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1315px, 'round') retina-size(0px, 'round');
+    }
+    &.br {
+      height: retina-size(28px, 'floor');
+      background-position: retina-size(-1359px, 'round') retina-size(0px, 'round');
+    }
+    &.bs {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1403px, 'round') retina-size(0px, 'round');
+    }
+    &.bt {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1447px, 'round') retina-size(0px, 'round');
+    }
+    &.bv {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-1491px, 'round') retina-size(0px, 'round');
+    }
+    &.bw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1535px, 'round') retina-size(0px, 'round');
+    }
+    &.by {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1579px, 'round') retina-size(0px, 'round');
+    }
+    &.bz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1623px, 'round') retina-size(0px, 'round');
+    }
+    &.ca {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1667px, 'round') retina-size(0px, 'round');
+    }
+    &.cc {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1711px, 'round') retina-size(0px, 'round');
+    }
+    &.cd {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-1755px, 'round') retina-size(0px, 'round');
+    }
+    &.cf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1799px, 'round') retina-size(0px, 'round');
+    }
+    &.cg {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1843px, 'round') retina-size(0px, 'round');
+    }
+    &.ch {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-1887px, 'round') retina-size(0px, 'round');
+    }
+    &.ci {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-1921px, 'round') retina-size(0px, 'round');
+    }
+    &.ck {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-1965px, 'round') retina-size(0px, 'round');
+    }
+    &.cl {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2009px, 'round') retina-size(0px, 'round');
+    }
+    &.cm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2053px, 'round') retina-size(0px, 'round');
+    }
+    &.cn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2097px, 'round') retina-size(0px, 'round');
+    }
+    &.co {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2141px, 'round') retina-size(0px, 'round');
+    }
+    &.cp {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2185px, 'round') retina-size(0px, 'round');
+    }
+    &.cr {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-2229px, 'round') retina-size(0px, 'round');
+    }
+    &.cu {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-2273px, 'round') retina-size(0px, 'round');
+    }
+    &.cv {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-2317px, 'round') retina-size(0px, 'round');
+    }
+    &.cw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2361px, 'round') retina-size(0px, 'round');
+    }
+    &.cx {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-2405px, 'round') retina-size(0px, 'round');
+    }
+    &.cy {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2449px, 'round') retina-size(0px, 'round');
+    }
+    &.cz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2493px, 'round') retina-size(0px, 'round');
+    }
+    &.de {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-2537px, 'round') retina-size(0px, 'round');
+    }
+    &.dg {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-2581px, 'round') retina-size(0px, 'round');
+    }
+    &.dj {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2625px, 'round') retina-size(0px, 'round');
+    }
+    &.dk {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-2669px, 'round') retina-size(0px, 'round');
+    }
+    &.dm {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-2713px, 'round') retina-size(0px, 'round');
+    }
+    &.do {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-2757px, 'round') retina-size(0px, 'round');
+    }
+    &.dz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2801px, 'round') retina-size(0px, 'round');
+    }
+    &.ea {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2845px, 'round') retina-size(0px, 'round');
+    }
+    &.ec {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2889px, 'round') retina-size(0px, 'round');
+    }
+    &.ee {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-2933px, 'round') retina-size(0px, 'round');
+    }
+    &.eg {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-2977px, 'round') retina-size(0px, 'round');
+    }
+    &.eh {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3021px, 'round') retina-size(0px, 'round');
+    }
+    &.er {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3065px, 'round') retina-size(0px, 'round');
+    }
+    &.es {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3109px, 'round') retina-size(0px, 'round');
+    }
+    &.et {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3153px, 'round') retina-size(0px, 'round');
+    }
+    &.eu {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3197px, 'round') retina-size(0px, 'round');
+    }
+    &.fi {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-3241px, 'round') retina-size(0px, 'round');
+    }
+    &.fj {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3285px, 'round') retina-size(0px, 'round');
+    }
+    &.fk {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3329px, 'round') retina-size(0px, 'round');
+    }
+    &.fm {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-3373px, 'round') retina-size(0px, 'round');
+    }
+    &.fo {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-3417px, 'round') retina-size(0px, 'round');
+    }
+    &.fr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3461px, 'round') retina-size(0px, 'round');
+    }
+    &.ga {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-3505px, 'round') retina-size(0px, 'round');
+    }
+    &.gb {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3549px, 'round') retina-size(0px, 'round');
+    }
+    &.gd {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-3593px, 'round') retina-size(0px, 'round');
+    }
+    &.ge {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3637px, 'round') retina-size(0px, 'round');
+    }
+    &.gf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3681px, 'round') retina-size(0px, 'round');
+    }
+    &.gg {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3725px, 'round') retina-size(0px, 'round');
+    }
+    &.gh {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3769px, 'round') retina-size(0px, 'round');
+    }
+    &.gi {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-3813px, 'round') retina-size(0px, 'round');
+    }
+    &.gl {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3857px, 'round') retina-size(0px, 'round');
+    }
+    &.gm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3901px, 'round') retina-size(0px, 'round');
+    }
+    &.gn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3945px, 'round') retina-size(0px, 'round');
+    }
+    &.gp {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-3989px, 'round') retina-size(0px, 'round');
+    }
+    &.gq {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4033px, 'round') retina-size(0px, 'round');
+    }
+    &.gr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4077px, 'round') retina-size(0px, 'round');
+    }
+    &.gs {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4121px, 'round') retina-size(0px, 'round');
+    }
+    &.gt {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-4165px, 'round') retina-size(0px, 'round');
+    }
+    &.gu {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-4209px, 'round') retina-size(0px, 'round');
+    }
+    &.gw {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4253px, 'round') retina-size(0px, 'round');
+    }
+    &.gy {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-4297px, 'round') retina-size(0px, 'round');
+    }
+    &.hk {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4341px, 'round') retina-size(0px, 'round');
+    }
+    &.hm {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4385px, 'round') retina-size(0px, 'round');
+    }
+    &.hn {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4429px, 'round') retina-size(0px, 'round');
+    }
+    &.hr {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4473px, 'round') retina-size(0px, 'round');
+    }
+    &.ht {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-4517px, 'round') retina-size(0px, 'round');
+    }
+    &.hu {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4561px, 'round') retina-size(0px, 'round');
+    }
+    &.ic {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4605px, 'round') retina-size(0px, 'round');
+    }
+    &.id {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4649px, 'round') retina-size(0px, 'round');
+    }
+    &.ie {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4693px, 'round') retina-size(0px, 'round');
+    }
+    &.il {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-4737px, 'round') retina-size(0px, 'round');
+    }
+    &.im {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4781px, 'round') retina-size(0px, 'round');
+    }
+    &.in {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4825px, 'round') retina-size(0px, 'round');
+    }
+    &.io {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-4869px, 'round') retina-size(0px, 'round');
+    }
+    &.iq {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-4913px, 'round') retina-size(0px, 'round');
+    }
+    &.ir {
+      height: retina-size(23px, 'floor');
+      background-position: retina-size(-4957px, 'round') retina-size(0px, 'round');
+    }
+    &.is {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-5001px, 'round') retina-size(0px, 'round');
+    }
+    &.it {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5045px, 'round') retina-size(0px, 'round');
+    }
+    &.je {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-5089px, 'round') retina-size(0px, 'round');
+    }
+    &.jm {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5133px, 'round') retina-size(0px, 'round');
+    }
+    &.jo {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5177px, 'round') retina-size(0px, 'round');
+    }
+    &.jp {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5221px, 'round') retina-size(0px, 'round');
+    }
+    &.ke {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5265px, 'round') retina-size(0px, 'round');
+    }
+    &.kg {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-5309px, 'round') retina-size(0px, 'round');
+    }
+    &.kh {
+      height: retina-size(26px, 'floor');
+      background-position: retina-size(-5353px, 'round') retina-size(0px, 'round');
+    }
+    &.ki {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5397px, 'round') retina-size(0px, 'round');
+    }
+    &.km {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-5441px, 'round') retina-size(0px, 'round');
+    }
+    &.kn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5485px, 'round') retina-size(0px, 'round');
+    }
+    &.kp {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5529px, 'round') retina-size(0px, 'round');
+    }
+    &.kr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5573px, 'round') retina-size(0px, 'round');
+    }
+    &.kw {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5617px, 'round') retina-size(0px, 'round');
+    }
+    &.ky {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5661px, 'round') retina-size(0px, 'round');
+    }
+    &.kz {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5705px, 'round') retina-size(0px, 'round');
+    }
+    &.la {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5749px, 'round') retina-size(0px, 'round');
+    }
+    &.lb {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-5793px, 'round') retina-size(0px, 'round');
+    }
+    &.lc {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5837px, 'round') retina-size(0px, 'round');
+    }
+    &.li {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-5881px, 'round') retina-size(0px, 'round');
+    }
+    &.lk {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-5925px, 'round') retina-size(0px, 'round');
+    }
+    &.lr {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-5969px, 'round') retina-size(0px, 'round');
+    }
+    &.ls {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6013px, 'round') retina-size(0px, 'round');
+    }
+    &.lt {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-6057px, 'round') retina-size(0px, 'round');
+    }
+    &.lu {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-6101px, 'round') retina-size(0px, 'round');
+    }
+    &.lv {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6145px, 'round') retina-size(0px, 'round');
+    }
+    &.ly {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6189px, 'round') retina-size(0px, 'round');
+    }
+    &.ma {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6233px, 'round') retina-size(0px, 'round');
+    }
+    &.mc {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-6277px, 'round') retina-size(0px, 'round');
+    }
+    &.md {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6319px, 'round') retina-size(0px, 'round');
+    }
+    &.me {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6363px, 'round') retina-size(0px, 'round');
+    }
+    &.mf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6407px, 'round') retina-size(0px, 'round');
+    }
+    &.mg {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6451px, 'round') retina-size(0px, 'round');
+    }
+    &.mh {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-6495px, 'round') retina-size(0px, 'round');
+    }
+    &.mk {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6539px, 'round') retina-size(0px, 'round');
+    }
+    &.ml {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6583px, 'round') retina-size(0px, 'round');
+    }
+    &.mm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6627px, 'round') retina-size(0px, 'round');
+    }
+    &.mn {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6671px, 'round') retina-size(0px, 'round');
+    }
+    &.mo {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6715px, 'round') retina-size(0px, 'round');
+    }
+    &.mp {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6759px, 'round') retina-size(0px, 'round');
+    }
+    &.mq {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6803px, 'round') retina-size(0px, 'round');
+    }
+    &.mr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6847px, 'round') retina-size(0px, 'round');
+    }
+    &.ms {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-6891px, 'round') retina-size(0px, 'round');
+    }
+    &.mt {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6935px, 'round') retina-size(0px, 'round');
+    }
+    &.mu {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-6979px, 'round') retina-size(0px, 'round');
+    }
+    &.mv {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7023px, 'round') retina-size(0px, 'round');
+    }
+    &.mw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7067px, 'round') retina-size(0px, 'round');
+    }
+    &.mx {
+      height: retina-size(23px, 'floor');
+      background-position: retina-size(-7111px, 'round') retina-size(0px, 'round');
+    }
+    &.my {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7155px, 'round') retina-size(0px, 'round');
+    }
+    &.mz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7199px, 'round') retina-size(0px, 'round');
+    }
+    &.na {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7243px, 'round') retina-size(0px, 'round');
+    }
+    &.nc {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7287px, 'round') retina-size(0px, 'round');
+    }
+    &.ne {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-7331px, 'round') retina-size(0px, 'round');
+    }
+    &.nf {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7370px, 'round') retina-size(0px, 'round');
+    }
+    &.ng {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7414px, 'round') retina-size(0px, 'round');
+    }
+    &.ni {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-7458px, 'round') retina-size(0px, 'round');
+    }
+    &.nl {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7502px, 'round') retina-size(0px, 'round');
+    }
+    &.no {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-7546px, 'round') retina-size(0px, 'round');
+    }
+    &.np {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-7590px, 'round') retina-size(0px, 'round');
+    }
+    &.nr {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7619px, 'round') retina-size(0px, 'round');
+    }
+    &.nu {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7663px, 'round') retina-size(0px, 'round');
+    }
+    &.nz {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7707px, 'round') retina-size(0px, 'round');
+    }
+    &.om {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7751px, 'round') retina-size(0px, 'round');
+    }
+    &.pa {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7795px, 'round') retina-size(0px, 'round');
+    }
+    &.pe {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7839px, 'round') retina-size(0px, 'round');
+    }
+    &.pf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-7883px, 'round') retina-size(0px, 'round');
+    }
+    &.pg {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-7927px, 'round') retina-size(0px, 'round');
+    }
+    &.ph {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-7971px, 'round') retina-size(0px, 'round');
+    }
+    &.pk {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8015px, 'round') retina-size(0px, 'round');
+    }
+    &.pl {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-8059px, 'round') retina-size(0px, 'round');
+    }
+    &.pm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8103px, 'round') retina-size(0px, 'round');
+    }
+    &.pn {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8147px, 'round') retina-size(0px, 'round');
+    }
+    &.pr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8191px, 'round') retina-size(0px, 'round');
+    }
+    &.ps {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8235px, 'round') retina-size(0px, 'round');
+    }
+    &.pt {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8279px, 'round') retina-size(0px, 'round');
+    }
+    &.pw {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-8323px, 'round') retina-size(0px, 'round');
+    }
+    &.py {
+      height: retina-size(22px, 'floor');
+      background-position: retina-size(-8367px, 'round') retina-size(0px, 'round');
+    }
+    &.qa {
+      height: retina-size(16px, 'floor');
+      background-position: retina-size(-8411px, 'round') retina-size(0px, 'round');
+    }
+    &.re {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8455px, 'round') retina-size(0px, 'round');
+    }
+    &.ro {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8499px, 'round') retina-size(0px, 'round');
+    }
+    &.rs {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8543px, 'round') retina-size(0px, 'round');
+    }
+    &.ru {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8587px, 'round') retina-size(0px, 'round');
+    }
+    &.rw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8631px, 'round') retina-size(0px, 'round');
+    }
+    &.sa {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8675px, 'round') retina-size(0px, 'round');
+    }
+    &.sb {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8719px, 'round') retina-size(0px, 'round');
+    }
+    &.sc {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8763px, 'round') retina-size(0px, 'round');
+    }
+    &.sd {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8807px, 'round') retina-size(0px, 'round');
+    }
+    &.se {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-8851px, 'round') retina-size(0px, 'round');
+    }
+    &.sg {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-8895px, 'round') retina-size(0px, 'round');
+    }
+    &.sh {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8939px, 'round') retina-size(0px, 'round');
+    }
+    &.si {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-8983px, 'round') retina-size(0px, 'round');
+    }
+    &.sj {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-9027px, 'round') retina-size(0px, 'round');
+    }
+    &.sk {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9071px, 'round') retina-size(0px, 'round');
+    }
+    &.sl {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9115px, 'round') retina-size(0px, 'round');
+    }
+    &.sm {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-9159px, 'round') retina-size(0px, 'round');
+    }
+    &.sn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9203px, 'round') retina-size(0px, 'round');
+    }
+    &.so {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9247px, 'round') retina-size(0px, 'round');
+    }
+    &.sr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9291px, 'round') retina-size(0px, 'round');
+    }
+    &.ss {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9335px, 'round') retina-size(0px, 'round');
+    }
+    &.st {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9379px, 'round') retina-size(0px, 'round');
+    }
+    &.sv {
+      height: retina-size(23px, 'floor');
+      background-position: retina-size(-9423px, 'round') retina-size(0px, 'round');
+    }
+    &.sx {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9467px, 'round') retina-size(0px, 'round');
+    }
+    &.sy {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9511px, 'round') retina-size(0px, 'round');
+    }
+    &.sz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9555px, 'round') retina-size(0px, 'round');
+    }
+    &.ta {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9599px, 'round') retina-size(0px, 'round');
+    }
+    &.tc {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9643px, 'round') retina-size(0px, 'round');
+    }
+    &.td {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9687px, 'round') retina-size(0px, 'round');
+    }
+    &.tf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9731px, 'round') retina-size(0px, 'round');
+    }
+    &.tg {
+      height: retina-size(25px, 'floor');
+      background-position: retina-size(-9775px, 'round') retina-size(0px, 'round');
+    }
+    &.th {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9819px, 'round') retina-size(0px, 'round');
+    }
+    &.tj {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9863px, 'round') retina-size(0px, 'round');
+    }
+    &.tk {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9907px, 'round') retina-size(0px, 'round');
+    }
+    &.tl {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-9951px, 'round') retina-size(0px, 'round');
+    }
+    &.tm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-9995px, 'round') retina-size(0px, 'round');
+    }
+    &.tn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10039px, 'round') retina-size(0px, 'round');
+    }
+    &.to {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-10083px, 'round') retina-size(0px, 'round');
+    }
+    &.tr {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10127px, 'round') retina-size(0px, 'round');
+    }
+    &.tt {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-10171px, 'round') retina-size(0px, 'round');
+    }
+    &.tv {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-10215px, 'round') retina-size(0px, 'round');
+    }
+    &.tw {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10259px, 'round') retina-size(0px, 'round');
+    }
+    &.tz {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10303px, 'round') retina-size(0px, 'round');
+    }
+    &.ua {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10347px, 'round') retina-size(0px, 'round');
+    }
+    &.ug {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10391px, 'round') retina-size(0px, 'round');
+    }
+    &.um {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-10435px, 'round') retina-size(0px, 'round');
+    }
+    &.us {
+      height: retina-size(21px, 'floor');
+      background-position: retina-size(-10479px, 'round') retina-size(0px, 'round');
+    }
+    &.uy {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10523px, 'round') retina-size(0px, 'round');
+    }
+    &.uz {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-10567px, 'round') retina-size(0px, 'round');
+    }
+    &.va {
+      height: retina-size(30px, 'floor');
+      background-position: retina-size(-10611px, 'round') retina-size(0px, 'round');
+    }
+    &.vc {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10645px, 'round') retina-size(0px, 'round');
+    }
+    &.ve {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10689px, 'round') retina-size(0px, 'round');
+    }
+    &.vg {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-10733px, 'round') retina-size(0px, 'round');
+    }
+    &.vi {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10777px, 'round') retina-size(0px, 'round');
+    }
+    &.vn {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10821px, 'round') retina-size(0px, 'round');
+    }
+    &.vu {
+      height: retina-size(24px, 'floor');
+      background-position: retina-size(-10865px, 'round') retina-size(0px, 'round');
+    }
+    &.wf {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-10909px, 'round') retina-size(0px, 'round');
+    }
+    &.ws {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-10953px, 'round') retina-size(0px, 'round');
+    }
+    &.xk {
+      height: retina-size(29px, 'floor');
+      background-position: retina-size(-10997px, 'round') retina-size(0px, 'round');
+    }
+    &.ye {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-11041px, 'round') retina-size(0px, 'round');
+    }
+    &.yt {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-11085px, 'round') retina-size(0px, 'round');
+    }
+    &.za {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-11129px, 'round') retina-size(0px, 'round');
+    }
+    &.zm {
+      height: retina-size(27px, 'floor');
+      background-position: retina-size(-11173px, 'round') retina-size(0px, 'round');
+    }
+    &.zw {
+      height: retina-size(20px, 'floor');
+      background-position: retina-size(-11217px, 'round') retina-size(0px, 'round');
+    }
+  }
+}

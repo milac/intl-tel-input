@@ -218,6 +218,7 @@ $selectedFlagWidth: $flagWidth + $flagPadding + $arrowWidth + (2 * $arrowPadding
 
 
 @import "sprite";
+@import "sprite@2x";
 
 .iti-flag {
   width: $flagWidth;
